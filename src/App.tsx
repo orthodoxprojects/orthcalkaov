@@ -1,7 +1,8 @@
-import Drawer from "./components/Drawer"
+import Drawer from "./components/Drawer";
+import Button from "./components/Button";
+import Paschalion from "./components/Paschalion";
 
 function App() {
-
   return (
     <>
       <div className="sticky top-0 w-full bg-primary text-primary-content">
@@ -11,16 +12,29 @@ function App() {
           </div>
 
           <div className="navbar-center">
-            Month and Year
+            <Button onClick={() => console.log("Clicked")}>
+              <img src="./img/chevron_left.svg" alt="chevron_left" />
+            </Button>
+            <Button onClick={() => console.log("Clicked")}>Month</Button>
+            <Button onClick={() => console.log("Clicked")}>
+              <img src="./img/chevron_right.svg" alt="chevron_right" />
+            </Button>
+            <Button onClick={() => console.log("Clicked")}>
+              <img src="./img/chevron_left.svg" alt="chevron_left" />
+            </Button>
+            <Button onClick={() => console.log("Clicked")}>Year</Button>
+            <Button onClick={() => console.log("Clicked")}>
+              <img src="./img/chevron_right.svg" alt="chevron_right" />
+            </Button>
           </div>
 
           <div className="navbar-end">
-            Paschalion
+            <Paschalion />
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
