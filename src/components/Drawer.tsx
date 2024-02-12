@@ -17,16 +17,6 @@ const Drawer = () => {
           ></label>
           <div className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
-            <p className="p-4 font-bold">Language</p>
-            <select
-              className="select select-bordered w-full max-w-xs"
-              id="selectLanguage"
-              defaultValue={"en"}
-            >
-              <option value="en">English</option>
-              <option value="ro">Română</option>
-              <option value="el">Ελληνικά</option>
-            </select>
             <p className="p-4 font-bold">Calendar</p>
             <select
               className="select select-bordered w-full max-w-xs"
