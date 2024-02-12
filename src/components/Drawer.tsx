@@ -1,3 +1,6 @@
+import calendar from "../assets/lang/others/calendar.json";
+import fating from "../assets/lang/others/fasting.json";
+
 const Drawer = () => {
   return (
     <>
@@ -17,23 +20,23 @@ const Drawer = () => {
           ></label>
           <div className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
-            <p className="p-4 font-bold">Calendar</p>
+            <p className="p-4 font-bold">{calendar[0]}</p>
             <select
               className="select select-bordered w-full max-w-xs"
               id="selectCalendar"
               defaultValue={"new"}
             >
-              <option value="old">Old Style</option>
-              <option value="new">New Style</option>
+              <option value="old">{calendar[1]}</option>
+              <option value="new">{calendar[2]}</option>
             </select>
-            <p className="p-4 font-bold">Fasting</p>
+            <p className="p-4 font-bold">{fating[0]}</p>
             <select
               className="select select-bordered w-full max-w-xs"
               id="selectFasting"
               defaultValue={"layman"}
             >
-              <option value="layman">Laymen</option>
-              <option value="monk">Monks</option>
+              <option value="layman">{fating[1]}</option>
+              <option value="monk">{fating[2]}</option>
             </select>
           </div>
         </div>
