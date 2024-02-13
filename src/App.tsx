@@ -4,7 +4,8 @@ import {
   setCookie,
   updateCookieExpiration,
 } from "./utils/cookieUtils";
-import months from "./assets/lang/others/months.json";
+import { decreaseDateByDays, formatDate } from "./utils/dateUtils";
+import locale from "./assets/lang/others/locale.json";
 import Drawer from "./components/Drawer";
 import Button from "./components/Button";
 import Paschalion from "./components/Paschalion";
@@ -42,9 +43,52 @@ function App() {
     setCookie("selectFasting", selectFastingValue);
   };
 
-  // Get Month Name
-  const getMonthName = (monthIndex: number): string => {
-    return months[monthIndex];
+  // Initial date
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth();
+  const year = currentDate.getFullYear();
+  const dateNewCalendar = new Date(year, month, day);
+  const dateOldCalendar = decreaseDateByDays(dateNewCalendar, 13);
+  const [date, setDate] = useState(
+    selectCalendar === "new" ? dateNewCalendar : dateOldCalendar
+  );
+
+  // Decrease, Increase and Reset Month and Year
+  const decreaseMonth = () => {
+    const newDate = new Date(date.getFullYear(), date.getMonth() - 1);
+    date.getFullYear() > 1925 ||
+    (date.getFullYear() === 1925 && date.getMonth() > 0)
+      ? setDate(newDate)
+      : null;
+  };
+  const increaseMonth = () => {
+    const newDate = new Date(date.getFullYear(), date.getMonth() + 1);
+    const maxDate = new Date(2099, 11); // December 2099
+    newDate > maxDate ? setDate(maxDate) : setDate(newDate);
+  };
+  const decreaseYear = () => {
+    const newYear = date.getFullYear() - 1;
+    newYear > 1924
+      ? setDate(
+          (prevDate) =>
+            new Date(prevDate.getFullYear() - 1, prevDate.getMonth())
+        )
+      : null;
+  };
+  const increaseYear = () => {
+    const newDate = new Date(date.getFullYear() + 1, date.getMonth());
+    date.getFullYear() < 2099 ? setDate(newDate) : null;
+  };
+  const resetMonthYear = () => {
+    const newDate =
+      selectCalendar === "new" ? dateNewCalendar : dateOldCalendar;
+    setDate(newDate);
+  };
+
+  // Get Locale
+  const getLocale = (getLocaleIndex: number): string => {
+    return locale[getLocaleIndex];
   };
   return (
     <>
@@ -60,26 +104,30 @@ function App() {
           </div>
 
           <div className="navbar-center">
-            <Button onClick={() => console.log("Clicked")}>
+            <Button onClick={decreaseMonth}>
               <img src="./img/chevron_left.svg" alt="chevron_left" />
             </Button>
-            <Button onClick={() => console.log("Clicked")}>
-              {getMonthName(0)}
+            <Button styleBtn={{ minWidth: "117px" }} onClick={resetMonthYear}>
+              {formatDate(getLocale, date, { showMonth: true })}
             </Button>
-            <Button onClick={() => console.log("Clicked")}>
+            <Button onClick={increaseMonth}>
               <img src="./img/chevron_right.svg" alt="chevron_right" />
             </Button>
-            <Button onClick={() => console.log("Clicked")}>
+            <Button onClick={decreaseYear}>
               <img src="./img/chevron_left.svg" alt="chevron_left" />
             </Button>
-            <Button onClick={() => console.log("Clicked")}>Year</Button>
-            <Button onClick={() => console.log("Clicked")}>
+            <Button onClick={resetMonthYear}>
+              {formatDate(getLocale, date, { showYear: true })}
+            </Button>
+            <Button onClick={increaseYear}>
               <img src="./img/chevron_right.svg" alt="chevron_right" />
             </Button>
           </div>
 
           <div className="navbar-end">
-            <Paschalion />
+            <Paschalion
+              yearValue={formatDate(getLocale, date, { showYear: true })}
+            />
           </div>
         </div>
       </div>

@@ -1,4 +1,10 @@
-const Paschalion = () => {
+import paschalion from "../assets/lang/others/paschalion.json";
+
+interface Props {
+  yearValue: any;
+}
+
+const Paschalion = ({ yearValue }: Props) => {
   return (
     <>
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
@@ -23,8 +29,10 @@ const Paschalion = () => {
               ✕
             </button>
           </form>
-          <h3 className="font-bold text-lg">Paschalion</h3>
-          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+          <h3 className="font-bold text-lg">
+            {paschalion[0]} {yearValue}
+          </h3>
+          <p className="py-4">TO IMPLEMENT</p>
         </div>
       </dialog>
     </>
