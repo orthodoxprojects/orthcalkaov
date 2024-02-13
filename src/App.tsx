@@ -108,7 +108,7 @@ function App() {
               <img src="./img/chevron_left.svg" alt="chevron_left" />
             </Button>
             <Button styleBtn={{ minWidth: "117px" }} onClick={resetMonthYear}>
-              {formatDate(getLocale, date, { showMonth: true })}
+              {formatDate(getLocale(0), date, { showMonth: true })}
             </Button>
             <Button onClick={increaseMonth}>
               <img src="./img/chevron_right.svg" alt="chevron_right" />
@@ -117,7 +117,7 @@ function App() {
               <img src="./img/chevron_left.svg" alt="chevron_left" />
             </Button>
             <Button styleBtn={{ minWidth: "51px" }} onClick={resetMonthYear}>
-              {formatDate(getLocale, date, { showYear: true })}
+              {formatDate(getLocale(0), date, { showYear: true })}
             </Button>
             <Button onClick={increaseYear}>
               <img src="./img/chevron_right.svg" alt="chevron_right" />
@@ -126,7 +126,7 @@ function App() {
 
           <div className="navbar-end">
             <Paschalion
-              yearValue={formatDate(getLocale, date, { showYear: true })}
+              yearValue={formatDate(getLocale(0), date, { showYear: true })}
             />
           </div>
         </div>
