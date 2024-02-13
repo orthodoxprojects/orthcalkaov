@@ -1,7 +1,19 @@
 import calendar from "../assets/lang/others/calendar.json";
 import fating from "../assets/lang/others/fasting.json";
 
-const Drawer = () => {
+interface Props {
+  defaultCalendarValue: string;
+  defaultFastingValue: string;
+  onSelectCalendar: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onSelectFasting: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+const Drawer = ({
+  defaultCalendarValue,
+  defaultFastingValue,
+  onSelectCalendar,
+  onSelectFasting,
+}: Props) => {
   return (
     <>
       <div className="drawer">
@@ -24,7 +36,8 @@ const Drawer = () => {
             <select
               className="select select-bordered w-full max-w-xs"
               id="selectCalendar"
-              defaultValue={"new"}
+              defaultValue={defaultCalendarValue}
+              onChange={onSelectCalendar}
             >
               <option value="old">{calendar[1]}</option>
               <option value="new">{calendar[2]}</option>
@@ -33,7 +46,8 @@ const Drawer = () => {
             <select
               className="select select-bordered w-full max-w-xs"
               id="selectFasting"
-              defaultValue={"layman"}
+              defaultValue={defaultFastingValue}
+              onChange={onSelectFasting}
             >
               <option value="layman">{fating[1]}</option>
               <option value="monk">{fating[2]}</option>
