@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   getCookie,
   setCookie,
@@ -14,6 +14,10 @@ function App() {
   const initialSelectCalendar = getCookie("selectCalendar");
   const initialSelectFasting = getCookie("selectFasting");
 
+  // Update Cookies expiration date if available
+  initialSelectCalendar ? updateCookieExpiration("selectCalendar") : null;
+  initialSelectFasting ? updateCookieExpiration("selectFasting") : null;
+
   // Set state to the cookie value if available, otherwise to default
   const [selectCalendar, setSelectCalendar] = useState<string>(
     initialSelectCalendar ? initialSelectCalendar : "new"
@@ -22,6 +26,7 @@ function App() {
     initialSelectFasting ? initialSelectFasting : "layman"
   );
 
+  // Set Calendar Value
   const onSelectCalendar = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectCalendarValue = event.target.value;
     console.log(selectCalendarValue);
@@ -29,6 +34,7 @@ function App() {
     setCookie("selectCalendar", selectCalendarValue);
   };
 
+  // Set Fasting Value
   const onSelectFasting = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectFastingValue = event.target.value;
     console.log(selectFastingValue);
@@ -36,6 +42,7 @@ function App() {
     setCookie("selectFasting", selectFastingValue);
   };
 
+  // Get Month Name
   const getMonthName = (monthIndex: number): string => {
     return months[monthIndex];
   };
