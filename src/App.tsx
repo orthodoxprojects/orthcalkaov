@@ -107,7 +107,7 @@ function App() {
             <Button onClick={decreaseMonth}>
               <img src="./img/chevron_left.svg" alt="chevron_left" />
             </Button>
-            <Button styleBtn={{ minWidth: "117px" }} onClick={resetMonthYear}>
+            <Button styleBtn={{ minWidth: "123px" }} onClick={resetMonthYear}>
               {formatDate(getLocale(0), date, { showMonth: true })}
             </Button>
             <Button onClick={increaseMonth}>
