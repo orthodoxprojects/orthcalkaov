@@ -1,4 +1,4 @@
-import { sub, Duration } from "date-fns";
+import { add, sub, Duration } from "date-fns";
 
 interface FormatOptions {
   showWeekday?: boolean;
@@ -10,6 +10,11 @@ interface FormatOptions {
 export function decreaseDateByDays(date: Date, days: number): Date {
   const duration: Duration = { days };
   return sub(date, duration);
+}
+
+export function increaseDateByDays(date: Date, days: number): Date {
+  const duration: Duration = { days };
+  return add(date, duration);
 }
 
 export function formatDate(
@@ -43,4 +48,18 @@ export function formatDate(
   });
 
   return formattedDate.toUpperCase();
+}
+
+export function getDaysArrayForMonth(date: Date): number[] {
+  const daysInMonthArray: number[] = [];
+  const year = date.getFullYear();
+  const month = date.getMonth();
+
+  const daysInMonth = new Date(year, month + 1, 0).getDate(); // Get the number of days in the specified month
+
+  for (let i = 1; i <= daysInMonth; i++) {
+    daysInMonthArray.push(i); // Push each day of the month to the array
+  }
+
+  return daysInMonthArray;
 }

@@ -4,11 +4,22 @@ import {
   setCookie,
   updateCookieExpiration,
 } from "./utils/cookieUtils";
-import { decreaseDateByDays, formatDate } from "./utils/dateUtils";
+import {
+  decreaseDateByDays,
+  increaseDateByDays,
+  formatDate,
+  getDaysArrayForMonth,
+} from "./utils/dateUtils";
 import locale from "./assets/lang/others/locale.json";
+import calabbr from "./assets/lang/others/calabbr.json";
 import Drawer from "./components/Drawer";
 import Button from "./components/Button";
 import Paschalion from "./components/Paschalion";
+import Fasting from "./components/Fasting";
+import MoonPhase from "./components/MoonPhase";
+import FeastsMovable from "./components/FeastsMovable";
+import FeastsFixed from "./components/FeastsFixed";
+import Sunday from "./components/Sunday";
 
 function App() {
   // Retrieve from cookies if available
@@ -30,7 +41,6 @@ function App() {
   // Set Calendar Value
   const onSelectCalendar = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectCalendarValue = event.target.value;
-    console.log(selectCalendarValue);
     setSelectCalendar(selectCalendarValue);
     setCookie("selectCalendar", selectCalendarValue);
   };
@@ -38,7 +48,6 @@ function App() {
   // Set Fasting Value
   const onSelectFasting = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectFastingValue = event.target.value;
-    console.log(selectFastingValue);
     setSelectFasting(selectFastingValue);
     setCookie("selectFasting", selectFastingValue);
   };
@@ -86,10 +95,23 @@ function App() {
     setDate(newDate);
   };
 
+  // Get New Date for Content
+  const getNewDate = (day: number): Date => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    return new Date(year, month, day);
+  };
+
   // Get Locale
   const getLocale = (getLocaleIndex: number): string => {
     return locale[getLocaleIndex];
   };
+  // Get Calendar Abbreviations
+  const getCalabbr = (getCalabbrIndex: number): string => {
+    return calabbr[getCalabbrIndex];
+  };
+  const calabbrOld = getCalabbr(0);
+  const calabbrNew = getCalabbr(1);
   return (
     <>
       <div className="sticky top-0 w-full bg-primary text-primary-content">
@@ -130,6 +152,49 @@ function App() {
             />
           </div>
         </div>
+      </div>
+      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 p-2">
+        {getDaysArrayForMonth(date).map((day) => (
+          <div
+            key={day}
+            className="grid grid-cols-[80px_auto] bg-neutral text-base-content p-2 m-0 rounded-xl"
+          >
+            <div className="pr-2 text-center">
+              <div className="text-[#deb36c] text-sm lg:text-base font-bold">
+                {selectCalendar === "new"
+                  ? formatDate(getLocale(0), getNewDate(day), {
+                      showWeekday: true,
+                    })
+                  : formatDate(getLocale(0), getNewDate(day - 1), {
+                      showWeekday: true,
+                    })}
+              </div>
+              <div className="text-[#deb36c] text-sm lg:text-base font-bold">
+                {day}/{date.getMonth() + 1}
+              </div>
+              <div className="text-[#deb36c] text-[12px] lg:text-sm">
+                {`${
+                  selectCalendar === "new"
+                    ? decreaseDateByDays(getNewDate(day), 13).getDate()
+                    : increaseDateByDays(getNewDate(day), 13).getDate()
+                } / ${
+                  selectCalendar === "new"
+                    ? decreaseDateByDays(getNewDate(day), 13).getMonth() + 1
+                    : increaseDateByDays(getNewDate(day), 13).getMonth() + 1
+                } ${selectCalendar === "new" ? calabbrOld : calabbrNew}`}
+              </div>
+              <div className="flex justify-between">
+                <Fasting />
+                <MoonPhase />
+              </div>
+            </div>
+            <div className="pl-2 border-l-[1px] border-base-content">
+              <FeastsMovable />
+              <FeastsFixed />
+              <Sunday />
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
