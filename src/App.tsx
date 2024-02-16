@@ -125,8 +125,8 @@ function App() {
   }, [dateNewCalendar, dateOldCalendar]);
   return (
     <div className="bg-stone-950">
-      <div className="sticky top-0 w-full bg-primary text-primary-content">
-        <div className="navbar bg-primary">
+      <div className="sticky top-0 w-full bg-[#a89894] text-stone-950">
+        <div className="navbar">
           <div className="navbar-start">
             <Drawer
               defaultCalendarValue={selectCalendar}
@@ -199,9 +199,9 @@ function App() {
                     decreaseDateByDays(currentDate, 13).getDate()
                 ? "bg-stone-700"
                 : "bg-stone-800"
-            } grid grid-cols-[80px_auto] text-base-content p-2 m-0 rounded-xl`}
+            } grid grid-cols-[80px_auto] p-2 m-0 rounded-xl`}
           >
-            <div className="pr-2 text-center text-gray-300">
+            <div className="pr-2 text-center text-stone-300">
               <div className="text-sm lg:text-base font-bold">
                 {selectCalendar === "new"
                   ? formatDate(getLocale(0), getNewDate(day), {
@@ -230,7 +230,7 @@ function App() {
                 <MoonPhase />
               </div>
             </div>
-            <div className="pl-2 border-l-[1px] border-base-content">
+            <div className="pl-2 border-l-[1px] border-stone-300">
               <FeastsMovable />
               <FeastsFixed />
               <Sunday />
