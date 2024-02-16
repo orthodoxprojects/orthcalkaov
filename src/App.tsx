@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   getCookie,
   setCookie,
@@ -112,8 +112,19 @@ function App() {
   };
   const calabbrOld = getCalabbr(0);
   const calabbrNew = getCalabbr(1);
+
+  // Scroll to scrollToRef
+  const scrollToRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (scrollToRef.current) {
+      scrollToRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [dateNewCalendar, dateOldCalendar]);
   return (
-    <>
+    <div className="bg-stone-950">
       <div className="sticky top-0 w-full bg-primary text-primary-content">
         <div className="navbar bg-primary">
           <div className="navbar-start">
@@ -156,11 +167,44 @@ function App() {
       <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 p-2">
         {getDaysArrayForMonth(date).map((day) => (
           <div
+            ref={
+              selectCalendar === "new" &&
+              getNewDate(day).getFullYear() === currentDate.getFullYear() &&
+              getNewDate(day).getMonth() === currentDate.getMonth() &&
+              getNewDate(day).getDate() === currentDate.getDate()
+                ? scrollToRef
+                : selectCalendar === "old" &&
+                  getNewDate(day).getFullYear() ===
+                    decreaseDateByDays(currentDate, 13).getFullYear() &&
+                  getNewDate(day).getMonth() ===
+                    decreaseDateByDays(currentDate, 13).getMonth() &&
+                  getNewDate(day).getDate() ===
+                    decreaseDateByDays(currentDate, 13).getDate()
+                ? scrollToRef
+                : null
+            }
             key={day}
-            className="grid grid-cols-[80px_auto] bg-neutral text-base-content p-2 m-0 rounded-xl"
+            className={`${
+              selectCalendar === "new" &&
+              getNewDate(day).getFullYear() === currentDate.getFullYear() &&
+              getNewDate(day).getMonth() === currentDate.getMonth() &&
+              getNewDate(day).getDate() === currentDate.getDate()
+                ? "bg-stone-700"
+                : "bg-stone-800"
+            } ${
+              selectCalendar === "old" &&
+              getNewDate(day).getFullYear() ===
+                decreaseDateByDays(currentDate, 13).getFullYear() &&
+              getNewDate(day).getMonth() ===
+                decreaseDateByDays(currentDate, 13).getMonth() &&
+              getNewDate(day).getDate() ===
+                decreaseDateByDays(currentDate, 13).getDate()
+                ? "bg-stone-700"
+                : "bg-stone-800"
+            } grid grid-cols-[80px_auto] text-base-content p-2 m-0 rounded-xl`}
           >
-            <div className="pr-2 text-center">
-              <div className="text-[#deb36c] text-sm lg:text-base font-bold">
+            <div className="pr-2 text-center text-gray-300">
+              <div className="text-sm lg:text-base font-bold">
                 {selectCalendar === "new"
                   ? formatDate(getLocale(0), getNewDate(day), {
                       showWeekday: true,
@@ -169,10 +213,10 @@ function App() {
                       showWeekday: true,
                     })}
               </div>
-              <div className="text-[#deb36c] text-sm lg:text-base font-bold">
+              <div className="text-sm lg:text-base font-bold">
                 {day}/{date.getMonth() + 1}
               </div>
-              <div className="text-[#deb36c] text-[12px] lg:text-sm">
+              <div className="text-[12px] lg:text-sm">
                 {`${
                   selectCalendar === "new"
                     ? decreaseDateByDays(getNewDate(day), 13).getDate()
@@ -196,7 +240,7 @@ function App() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
