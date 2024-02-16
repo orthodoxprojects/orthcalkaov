@@ -201,7 +201,15 @@ function App() {
                 : "bg-stone-800"
             } grid grid-cols-[80px_auto] p-2 m-0 rounded-xl`}
           >
-            <div className="pr-2 text-center text-stone-300">
+            <div
+              className={`${
+                selectCalendar === "new" && getNewDate(day).getDay() === 0
+                  ? "text-red-300"
+                  : selectCalendar === "old" && getNewDate(day).getDay() === 1
+                  ? "text-red-300"
+                  : "text-stone-300"
+              } pr-2 text-center`}
+            >
               <div className="text-sm lg:text-base font-bold">
                 {selectCalendar === "new"
                   ? formatDate(getLocale(0), getNewDate(day), {
