@@ -219,7 +219,7 @@ function App() {
                   selectCalendar === "new"
                     ? decreaseDateByDays(getNewDate(day), 13).getDate()
                     : increaseDateByDays(getNewDate(day), 13).getDate()
-                } / ${
+                }/${
                   selectCalendar === "new"
                     ? decreaseDateByDays(getNewDate(day), 13).getMonth() + 1
                     : increaseDateByDays(getNewDate(day), 13).getMonth() + 1
