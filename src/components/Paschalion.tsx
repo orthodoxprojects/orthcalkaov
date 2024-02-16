@@ -1,7 +1,7 @@
 import paschalion from "../assets/lang/others/paschalion.json";
 
 interface Props {
-  yearValue: any;
+  yearValue: string;
 }
 
 const Paschalion = ({ yearValue }: Props) => {

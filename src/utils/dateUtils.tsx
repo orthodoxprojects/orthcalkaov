@@ -18,7 +18,7 @@ export function increaseDateByDays(date: Date, days: number): Date {
 }
 
 export function formatDate(
-  getLocale: any,
+  getLocale: string,
   date: Date,
   options: FormatOptions = {}
 ): string {

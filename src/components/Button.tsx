@@ -1,6 +1,6 @@
 interface Props {
-  styleBtn?: any;
-  children: any;
+  styleBtn?: React.CSSProperties;
+  children: React.ReactNode;
   onClick: () => void;
 }
 
