@@ -190,15 +190,13 @@ function App() {
               getNewDate(day).getMonth() === currentDate.getMonth() &&
               getNewDate(day).getDate() === currentDate.getDate()
                 ? "bg-stone-700"
-                : "bg-stone-800"
-            } ${
-              selectCalendar === "old" &&
-              getNewDate(day).getFullYear() ===
-                decreaseDateByDays(currentDate, 13).getFullYear() &&
-              getNewDate(day).getMonth() ===
-                decreaseDateByDays(currentDate, 13).getMonth() &&
-              getNewDate(day).getDate() ===
-                decreaseDateByDays(currentDate, 13).getDate()
+                : selectCalendar === "old" &&
+                  getNewDate(day).getFullYear() ===
+                    decreaseDateByDays(currentDate, 13).getFullYear() &&
+                  getNewDate(day).getMonth() ===
+                    decreaseDateByDays(currentDate, 13).getMonth() &&
+                  getNewDate(day).getDate() ===
+                    decreaseDateByDays(currentDate, 13).getDate()
                 ? "bg-stone-700"
                 : "bg-stone-800"
             } grid grid-cols-[80px_auto] text-base-content p-2 m-0 rounded-xl`}
