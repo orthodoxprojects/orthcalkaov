@@ -34,7 +34,7 @@ const Drawer = ({
             {/* Sidebar content here */}
             <p className="p-4 font-bold">{calendar[0]}</p>
             <select
-              className="select select-bordered w-full max-w-xs bg-stone-500 text-stone-950"
+              className="select select-bordered w-full max-w-xs bg-stone-400 text-stone-950"
               id="selectCalendar"
               defaultValue={defaultCalendarValue}
               onChange={onSelectCalendar}
@@ -44,7 +44,7 @@ const Drawer = ({
             </select>
             <p className="p-4 font-bold">{fating[0]}</p>
             <select
-              className="select select-bordered w-full max-w-xs bg-stone-500 text-stone-950"
+              className="select select-bordered w-full max-w-xs bg-stone-400 text-stone-950"
               id="selectFasting"
               defaultValue={defaultFastingValue}
               onChange={onSelectFasting}
