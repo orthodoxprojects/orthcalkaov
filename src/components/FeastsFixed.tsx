@@ -14,9 +14,10 @@ import decemberData from "../assets/lang/feasts/fixed/december.json";
 interface Props {
   getMonthIndex: number;
   getDayIndex: string;
+  selectCalendar: any;
 }
 
-const FeastsFixed = ({ getMonthIndex, getDayIndex }: Props) => {
+const FeastsFixed = ({ getMonthIndex, getDayIndex, selectCalendar }: Props) => {
   // Month Array
   const setMonthIndex: any = [
     januaryData,
@@ -49,22 +50,22 @@ const FeastsFixed = ({ getMonthIndex, getDayIndex }: Props) => {
             {month["defaultBoth"]}
           </p>
           <p className="text-red-300 text-sm lg:text-base font-bold">
-            {month["primaryOld"]}
+            {selectCalendar === "old" && month["primaryOld"]}
           </p>
           <p className="text-stone-200 text-sm lg:text-base font-bold">
-            {month["secondaryOld"]}
+            {selectCalendar === "old" && month["secondaryOld"]}
           </p>
           <p className="text-stone-300 text-sm lg:text-base">
-            {month["defaultOld"]}
+            {selectCalendar === "old" && month["defaultOld"]}
           </p>
           <p className="text-red-300 text-sm lg:text-base font-bold">
-            {month["primaryNew"]}
+            {selectCalendar === "new" && month["primaryNew"]}
           </p>
           <p className="text-stone-200 text-sm lg:text-base font-bold">
-            {month["secondaryNew"]}
+            {selectCalendar === "new" && month["secondaryNew"]}
           </p>
           <p className="text-stone-300 text-sm lg:text-base">
-            {month["defaultNew"]}
+            {selectCalendar === "new" && month["defaultNew"]}
           </p>
         </div>
       ))}

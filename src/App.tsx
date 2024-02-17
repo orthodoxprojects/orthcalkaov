@@ -243,6 +243,7 @@ function App() {
               <FeastsFixed
                 getMonthIndex={date.getMonth()}
                 getDayIndex={day.toString()}
+                selectCalendar={selectCalendar}
               />
               <Sunday />
             </div>
