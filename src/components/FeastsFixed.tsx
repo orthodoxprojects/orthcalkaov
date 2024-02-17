@@ -14,7 +14,7 @@ import decemberData from "../assets/lang/feasts/fixed/december.json";
 interface Props {
   getMonthIndex: number;
   getDayIndex: string;
-  selectCalendar: any;
+  selectCalendar: string;
 }
 
 const FeastsFixed = ({ getMonthIndex, getDayIndex, selectCalendar }: Props) => {
