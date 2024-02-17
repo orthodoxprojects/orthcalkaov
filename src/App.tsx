@@ -240,7 +240,10 @@ function App() {
             </div>
             <div className="pl-2 border-l-[1px] border-stone-300">
               <FeastsMovable />
-              <FeastsFixed />
+              <FeastsFixed
+                getMonthIndex={date.getMonth()}
+                getDayIndex={day.toString()}
+              />
               <Sunday />
             </div>
           </div>
