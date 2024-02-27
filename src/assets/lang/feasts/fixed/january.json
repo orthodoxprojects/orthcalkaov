@@ -1,49 +1,40 @@
 {
   "1": [
     {
-      "primaryBoth": "January Primary 1"
+      "primaryBoth": "TĂIEREA-ÎMPREJUR CEA DUPĂ TRUP A DOMNULUI"
     },
     {
-      "secondaryBoth": "January Secondary 1"
-    },
-    {
-      "defaultBoth": "January Default 1"
-    },
-    {
-      "primaryOld": "January Primary Old 1"
-    },
-    {
-      "secondaryOld": "January Secondary Old 1"
-    },
-    {
-      "defaultOld": "January Default Old 1"
-    },
-    {
-      "primaryNew": "January Primary New 1"
-    },
-    {
-      "secondaryNew": "January Secondary New 1"
-    },
-    {
-      "defaultNew": "January Default New 1"
+      "secondaryBoth": "Sfântul Ierarh Vasilie cel Mare, Arhiepiscopul Cezareei Capadociei"
     }
   ],
   "2": [
     {
-      "primaryBoth": "January Primary 2"
+      "defaultBoth": "Sfântul Silvestru, Episcopul Romei"
     },
     {
-      "primaryBoth": "January Primary 2"
+      "defaultBoth": "Sfântul Cuvios Serafim de Sarov"
     }
   ],
   "3": [
     {
-      "primaryBoth": "January Primary 3"
+      "defaultBoth": "Sfântul Proroc Maleahi"
+    },
+    {
+      "defaultBoth": "Sfântul Mucenic Gordie"
     }
   ],
   "4": [
     {
-      "primaryBoth": "January Primary 4"
+      "defaultBoth": "Soborul Sfinților 70 de Apostoli"
+    },
+    {
+      "defaultBoth": "Sfântul Cuvios Teoctist din Sicilia"
+    },
+    {
+      "defaultBoth": "Sfânta Cuvioasă Apolinaria"
+    },
+    {
+      "defaultBoth": "Sfântul Cuvios Nichifor cel Lepros"
     }
   ],
   "5": [
