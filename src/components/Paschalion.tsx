@@ -1,4 +1,4 @@
-import paschalion from "../assets/lang/others/paschalion.json";
+import paschalion from "../assets/lang/ro/others/paschalion.json";
 
 interface Props {
   yearValue: string;

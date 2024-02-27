@@ -10,8 +10,8 @@ import {
   formatDate,
   getDaysArrayForMonth,
 } from "./utils/dateUtils";
-import locale from "./assets/lang/others/locale.json";
-import calabbr from "./assets/lang/others/calabbr.json";
+import locale from "./assets/lang/ro/others/locale.json";
+import calabbr from "./assets/lang/ro/others/calabbr.json";
 import Drawer from "./components/Drawer";
 import Button from "./components/Button";
 import Paschalion from "./components/Paschalion";

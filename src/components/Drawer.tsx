@@ -1,5 +1,5 @@
-import calendar from "../assets/lang/others/calendar.json";
-import fating from "../assets/lang/others/fasting.json";
+import calendar from "../assets/lang/ro/others/calendar.json";
+import fating from "../assets/lang/ro/others/fasting.json";
 
 interface Props {
   defaultCalendarValue: string;
