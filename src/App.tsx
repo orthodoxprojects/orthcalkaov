@@ -23,20 +23,32 @@ import Sunday from "./components/Sunday";
 
 function App() {
   // Retrieve from cookies if available
+  const initialSelectLanguage = getCookie("selectLanguage");
   const initialSelectCalendar = getCookie("selectCalendar");
   const initialSelectFasting = getCookie("selectFasting");
 
   // Update Cookies expiration date if available
+  initialSelectLanguage ? updateCookieExpiration("selectLanguage") : null;
   initialSelectCalendar ? updateCookieExpiration("selectCalendar") : null;
   initialSelectFasting ? updateCookieExpiration("selectFasting") : null;
 
   // Set state to the cookie value if available, otherwise to default
+  const [selectLanguage, setSelectLanguage] = useState<string>(
+    initialSelectLanguage ? initialSelectLanguage : "en"
+  );
   const [selectCalendar, setSelectCalendar] = useState<string>(
     initialSelectCalendar ? initialSelectCalendar : "new"
   );
   const [selectFasting, setSelectFasting] = useState<string>(
     initialSelectFasting ? initialSelectFasting : "layman"
   );
+
+  // Set Language Value
+  const onSelectLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectLanguageValue = event.target.value;
+    setSelectLanguage(selectLanguageValue);
+    setCookie("selectLanguage", selectLanguageValue);
+  };
 
   // Set Calendar Value
   const onSelectCalendar = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -129,8 +141,10 @@ function App() {
         <div className="navbar">
           <div className="navbar-start">
             <Drawer
+              defaultLanguageValue={selectLanguage}
               defaultCalendarValue={selectCalendar}
               defaultFastingValue={selectFasting}
+              onSelectLanguage={onSelectLanguage}
               onSelectCalendar={onSelectCalendar}
               onSelectFasting={onSelectFasting}
             />

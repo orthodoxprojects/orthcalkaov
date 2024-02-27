@@ -1,16 +1,21 @@
+import language from "../assets/lang/ro/others/language.json";
 import calendar from "../assets/lang/ro/others/calendar.json";
-import fating from "../assets/lang/ro/others/fasting.json";
+import fasting from "../assets/lang/ro/others/fasting.json";
 
 interface Props {
+  defaultLanguageValue: string;
   defaultCalendarValue: string;
   defaultFastingValue: string;
+  onSelectLanguage: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   onSelectCalendar: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   onSelectFasting: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 const Drawer = ({
+  defaultLanguageValue,
   defaultCalendarValue,
   defaultFastingValue,
+  onSelectLanguage,
   onSelectCalendar,
   onSelectFasting,
 }: Props) => {
@@ -32,6 +37,17 @@ const Drawer = ({
           ></label>
           <div className="menu p-4 w-80 min-h-full bg-[#a89894] text-stone-950">
             {/* Sidebar content here */}
+            <p className="p-4 font-bold">{language[0]}</p>
+            <select
+              className="select select-bordered w-full max-w-xs bg-stone-400 text-stone-950"
+              id="selectLanguage"
+              defaultValue={defaultLanguageValue}
+              onChange={onSelectLanguage}
+            >
+              <option value="en">{language[1]}</option>
+              <option value="ro">{language[2]}</option>
+              <option value="el">{language[3]}</option>
+            </select>
             <p className="p-4 font-bold">{calendar[0]}</p>
             <select
               className="select select-bordered w-full max-w-xs bg-stone-400 text-stone-950"
@@ -42,15 +58,15 @@ const Drawer = ({
               <option value="old">{calendar[1]}</option>
               <option value="new">{calendar[2]}</option>
             </select>
-            <p className="p-4 font-bold">{fating[0]}</p>
+            <p className="p-4 font-bold">{fasting[0]}</p>
             <select
               className="select select-bordered w-full max-w-xs bg-stone-400 text-stone-950"
               id="selectFasting"
               defaultValue={defaultFastingValue}
               onChange={onSelectFasting}
             >
-              <option value="layman">{fating[1]}</option>
-              <option value="monk">{fating[2]}</option>
+              <option value="layman">{fasting[1]}</option>
+              <option value="monk">{fasting[2]}</option>
             </select>
           </div>
         </div>
