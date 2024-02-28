@@ -10,11 +10,13 @@ import {
   formatDate,
   getDaysArrayForMonth,
 } from "./utils/dateUtils";
-import locale from "./assets/lang/ro/others/locale.json";
-import calabbr from "./assets/lang/ro/others/calabbr.json";
+import localeEn from "./assets/lang/en/others/locale.json";
+import localeRo from "./assets/lang/ro/others/locale.json";
+import localeEl from "./assets/lang/el/others/locale.json";
 import Drawer from "./components/Drawer";
 import Button from "./components/Button";
 import Paschalion from "./components/Paschalion";
+import CalAbbr from "./components/CalAbbr";
 import Fasting from "./components/Fasting";
 import MoonPhase from "./components/MoonPhase";
 import FeastsMovable from "./components/FeastsMovable";
@@ -115,15 +117,12 @@ function App() {
   };
 
   // Get Locale
-  const getLocale = (getLocaleIndex: number): string => {
-    return locale[getLocaleIndex];
-  };
-  // Get Calendar Abbreviations
-  const getCalabbr = (getCalabbrIndex: number): string => {
-    return calabbr[getCalabbrIndex];
-  };
-  const calabbrOld = getCalabbr(0);
-  const calabbrNew = getCalabbr(1);
+  const getLocale =
+    selectLanguage === "ro"
+      ? localeRo[0]
+      : selectLanguage === "el"
+      ? localeEl[0]
+      : localeEn[0];
 
   // Scroll to scrollToRef
   const scrollToRef = useRef<HTMLDivElement>(null);
@@ -154,8 +153,8 @@ function App() {
             <Button onClick={decreaseMonth}>
               <img src="./img/chevron_left.svg" alt="chevron_left" />
             </Button>
-            <Button styleBtn={{ minWidth: "123px" }} onClick={resetMonthYear}>
-              {formatDate(getLocale(0), date, { showMonth: true })}
+            <Button styleBtn={{ minWidth: "142px" }} onClick={resetMonthYear}>
+              {formatDate(getLocale, date, { showMonth: true })}
             </Button>
             <Button onClick={increaseMonth}>
               <img src="./img/chevron_right.svg" alt="chevron_right" />
@@ -164,7 +163,7 @@ function App() {
               <img src="./img/chevron_left.svg" alt="chevron_left" />
             </Button>
             <Button styleBtn={{ minWidth: "51px" }} onClick={resetMonthYear}>
-              {formatDate(getLocale(0), date, { showYear: true })}
+              {formatDate(getLocale, date, { showYear: true })}
             </Button>
             <Button onClick={increaseYear}>
               <img src="./img/chevron_right.svg" alt="chevron_right" />
@@ -173,7 +172,7 @@ function App() {
 
           <div className="navbar-end">
             <Paschalion
-              yearValue={formatDate(getLocale(0), date, { showYear: true })}
+              yearValue={formatDate(getLocale, date, { showYear: true })}
             />
           </div>
         </div>
@@ -226,10 +225,10 @@ function App() {
             >
               <div className="text-sm lg:text-base font-bold">
                 {selectCalendar === "new"
-                  ? formatDate(getLocale(0), getNewDate(day), {
+                  ? formatDate(getLocale, getNewDate(day), {
                       showWeekday: true,
                     })
-                  : formatDate(getLocale(0), getNewDate(day - 1), {
+                  : formatDate(getLocale, getNewDate(day - 1), {
                       showWeekday: true,
                     })}
               </div>
@@ -245,7 +244,11 @@ function App() {
                   selectCalendar === "new"
                     ? decreaseDateByDays(getNewDate(day), 13).getMonth() + 1
                     : increaseDateByDays(getNewDate(day), 13).getMonth() + 1
-                } ${selectCalendar === "new" ? calabbrOld : calabbrNew}`}
+                } `}
+                <CalAbbr
+                  selectLanguage={selectLanguage}
+                  selectCalendar={selectCalendar}
+                />
               </div>
               <div className="flex justify-between">
                 <Fasting />
