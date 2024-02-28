@@ -260,6 +260,7 @@ function App() {
             <div className="pl-2 border-l-[1px] border-stone-300">
               <FeastsMovable />
               <FeastsFixed
+                selectLanguage={selectLanguage}
                 getMonthIndex={date.getMonth()}
                 getDayIndex={day.toString()}
                 selectCalendar={selectCalendar}
