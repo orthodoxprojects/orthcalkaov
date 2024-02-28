@@ -140,6 +140,7 @@ function App() {
         <div className="navbar">
           <div className="navbar-start">
             <Drawer
+              selectLanguage={selectLanguage}
               defaultLanguageValue={selectLanguage}
               defaultCalendarValue={selectCalendar}
               defaultFastingValue={selectFasting}
@@ -172,6 +173,7 @@ function App() {
 
           <div className="navbar-end">
             <Paschalion
+              selectLanguage={selectLanguage}
               yearValue={formatDate(getLocale, date, { showYear: true })}
             />
           </div>

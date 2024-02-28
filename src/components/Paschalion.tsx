@@ -1,10 +1,20 @@
-import paschalion from "../assets/lang/ro/others/paschalion.json";
+import paschalionEn from "../assets/lang/en/others/paschalion.json";
+import paschalionRo from "../assets/lang/ro/others/paschalion.json";
+import paschalionEl from "../assets/lang/el/others/paschalion.json";
 
 interface Props {
+  selectLanguage: string;
   yearValue: string;
 }
 
-const Paschalion = ({ yearValue }: Props) => {
+const Paschalion = ({ selectLanguage, yearValue }: Props) => {
+  // Get Paschalion
+  const getPaschalion =
+    selectLanguage === "ro"
+      ? paschalionRo[0]
+      : selectLanguage === "el"
+      ? paschalionEl[0]
+      : paschalionEn[0];
   return (
     <>
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
@@ -30,7 +40,7 @@ const Paschalion = ({ yearValue }: Props) => {
             </button>
           </form>
           <h3 className="font-bold text-lg">
-            {paschalion[0]} {yearValue}
+            {getPaschalion} {yearValue}
           </h3>
           <p className="py-4">TO IMPLEMENT</p>
         </div>
