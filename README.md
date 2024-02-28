@@ -6,10 +6,10 @@ OrthCalKAOV is an application that provides support for both the Old Calendar (J
 
 ## Features
 
-- **Fixed Feasts**: Displaying Orthodox feast days and holidays. _(Under Development)_
+- **Fixed Feasts**: Displaying Orthodox Saints and Feasts. _(Under Development)_
 - **Movable Feasts**: Calculating dates and intervals. _(Under Development)_
-- **Sunday Information**: Displays Tone, Matins, and Liturgy information for Sundays. _(Under Development)_
-- **Paschalion**: Displays Paschalion for selected year. _(Under Development)_
+- **Sunday Information**: Displays Gospel, Epistle, Mode and Eothinon information for Sundays. _(Under Development)_
+- **Paschalion**: Displays Pascha date for selected year. _(Under Development)_
 - **Fasting Icon**: Indicate fasting status for every day. _(Under Development)_
 - **Moon Phase Icon**: Provides the moon phase for every day. _(Under Development)_
 - **Highlight and Auto-Scrolling**: Highlights and automatically scrolls to the current day.
@@ -45,12 +45,11 @@ Access the web version of the application [here](https://efraimkaov.github.io/or
 
 ## Translating to Another Language
 
-The calendar interface is in Romanian, but it's designed to be easily translatable. All JSON files that need to be translated for another language are located in `/src/assets/lang`. Contributions for translations are welcome!
+The calendar interface is in English, Romanian and Greek, but it's designed to be easily translatable. All JSON files that need to be translated for another language are located in `/src/assets/lang`. Contributions for translations are welcome!
 
 ## To-Do List
 
 - Develop desktop and mobile applications for OrthCalKAOV.
-- Add support for both English and Greek languages.
 
 ## Contributing
 
