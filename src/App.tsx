@@ -265,7 +265,12 @@ function App() {
                 getDayIndex={day.toString()}
                 selectCalendar={selectCalendar}
               />
-              <Sunday />
+              <Sunday
+                selectLanguage={selectLanguage}
+                selectCalendar={selectCalendar}
+                date={date}
+                day={day}
+              />
             </div>
           </div>
         ))}
