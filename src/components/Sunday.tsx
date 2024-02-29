@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Sunday = ({ selectLanguage, selectCalendar, date, day }: Props) => {
-  // Get Language
+  // Get Sunday
   const getSunday0 =
     selectLanguage === "ro"
       ? sundayRo[0]
