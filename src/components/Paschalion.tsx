@@ -1,13 +1,22 @@
 import paschalionEn from "../assets/lang/en/others/paschalion.json";
 import paschalionRo from "../assets/lang/ro/others/paschalion.json";
 import paschalionEl from "../assets/lang/el/others/paschalion.json";
+import { calculatePascha } from "../utils/paschaUtils";
+import { increaseDateByDays, formatDate } from "../utils/dateUtils";
 
 interface Props {
   selectLanguage: string;
   yearValue: string;
+  selectCalendar: string;
+  getLocale: string;
 }
 
-const Paschalion = ({ selectLanguage, yearValue }: Props) => {
+const Paschalion = ({
+  selectLanguage,
+  yearValue,
+  selectCalendar,
+  getLocale,
+}: Props) => {
   // Get Paschalion
   const getPaschalion =
     selectLanguage === "ro"
@@ -15,6 +24,12 @@ const Paschalion = ({ selectLanguage, yearValue }: Props) => {
       : selectLanguage === "el"
       ? paschalionEl[0]
       : paschalionEn[0];
+
+  // Get Paschalion Date
+  const getPaschalionDate =
+    selectCalendar === "old"
+      ? calculatePascha(Number(yearValue))
+      : increaseDateByDays(calculatePascha(Number(yearValue)), 13);
   return (
     <>
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
@@ -42,7 +57,12 @@ const Paschalion = ({ selectLanguage, yearValue }: Props) => {
           <h3 className="font-bold text-lg">
             {getPaschalion} {yearValue}
           </h3>
-          <p className="py-4">TO IMPLEMENT</p>
+          <p className="py-4">
+            {formatDate(getLocale, getPaschalionDate, {
+              showDay: true,
+              showMonth: true,
+            })}
+          </p>
         </div>
       </dialog>
     </>

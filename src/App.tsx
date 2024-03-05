@@ -175,6 +175,8 @@ function App() {
             <Paschalion
               selectLanguage={selectLanguage}
               yearValue={formatDate(getLocale, date, { showYear: true })}
+              selectCalendar={selectCalendar}
+              getLocale={getLocale}
             />
           </div>
         </div>
