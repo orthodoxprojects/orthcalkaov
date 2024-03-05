@@ -15,6 +15,7 @@
   "dependencies": {
     "date-fns": "^3.3.1",
     "js-cookie": "^3.0.5",
+    "lunarphase-js": "^2.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   version="1.1"
+   viewBox="0 0 8.4667 8.4667"
+   id="svg1"
+   sodipodi:docname="moonWaxingGibbous.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="19.53125"
+     inkscape:cx="16"
+     inkscape:cy="16"
+     inkscape:window-width="1600"
+     inkscape:window-height="831"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="m 8.4667,4.23335 c 0,2.3373 -1.8953,4.2333 -4.2341,4.2333 -2.3373,0 -2.8489,-1.8953 -2.8489,-4.2333 0,-2.3388 0.51159,-4.2333 2.8489,-4.2333 2.3388,0 4.2341,1.8945 4.2341,4.2333 z"
+     fill="#db924b"
+     stroke-width="0.74794"
+     id="path1"
+     style="fill:#d6d3d1;fill-opacity:1" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#d6d3d1;stroke-width:0.529167;stroke-dasharray:none;stroke-opacity:1"
+     d="m 8.2020999,4.23335 c 0,2.1912268 -1.7775243,3.9687499 -3.9694509,3.9687499 -2.1912273,0 -3.96804895,-1.7768218 -3.96804895,-3.9687499 0,-2.1926294 1.77682165,-3.96874995 3.96804895,-3.96874995 2.1912271,0 3.9694509,1.77612055 3.9694509,3.96874995 z"
+     id="path62" />
+</svg>

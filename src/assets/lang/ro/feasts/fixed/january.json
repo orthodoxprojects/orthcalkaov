@@ -1,13 +1,22 @@
 {
   "1": [
     {
-      "primaryBoth": "TĂIEREA-ÎMPREJUR CEA DUPĂ TRUP A DOMNULUI"
+      "primaryBoth": "TĂIEREA-ÎMPREJUR A DOMNULUI NOSTRU IISUS HRISTOS"
     },
     {
-      "secondaryBoth": "Sfântul Ierarh Vasilie cel Mare, Arhiepiscopul Cezareei Capadociei"
+      "secondaryBoth": "Sfântul Vasile cel Mare"
+    },
+    {
+      "defaultBoth": "Sfântul Mucenic Vasile din Ancira"
+    },
+    {
+      "defaultBoth": "Sfânta Emilia"
     }
   ],
   "2": [
+    {
+      "defaultBoth": "Înainte-prăznuirea Sfintei Arătări"
+    },
     {
       "defaultBoth": "Sfântul Silvestru, Episcopul Romei"
     },
@@ -17,6 +26,9 @@
   ],
   "3": [
     {
+      "defaultBoth": "Înainte-prăznuirea Sfintei Arătări"
+    },
+    {
       "defaultBoth": "Sfântul Proroc Maleahi"
     },
     {
@@ -24,6 +36,9 @@
     }
   ],
   "4": [
+    {
+      "defaultBoth": "Înainte-prăznuirea Sfintei Arătări"
+    },
     {
       "defaultBoth": "Soborul Sfinților 70 de Apostoli"
     },

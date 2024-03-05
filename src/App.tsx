@@ -254,7 +254,11 @@ function App() {
               </div>
               <div className="flex justify-between">
                 <Fasting />
-                <MoonPhase />
+                <MoonPhase
+                  date={date}
+                  day={day}
+                  selectCalendar={selectCalendar}
+                />
               </div>
             </div>
             <div className="pl-2 border-l-[1px] border-stone-300">

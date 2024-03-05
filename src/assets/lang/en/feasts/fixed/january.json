@@ -1,36 +1,21 @@
 {
   "1": [
     {
-      "primaryBoth": "January English Primary 1"
+      "primaryBoth": "THE CIRCUMCISION OF OUR LORD JESUS CHRIST"
     },
     {
-      "secondaryBoth": "January English Secondary 1"
+      "secondaryBoth": "Saint Basil the Great"
     },
     {
-      "defaultBoth": "January English Default 1"
+      "defaultBoth": "Martyr Basil of Ancyra"
     },
     {
-      "primaryOld": "January English Primary Old 1"
-    },
-    {
-      "secondaryOld": "January English Secondary Old 1"
-    },
-    {
-      "defaultOld": "January English Default Old 1"
-    },
-    {
-      "primaryNew": "January English Primary New 1"
-    },
-    {
-      "secondaryNew": "January English Secondary New 1"
-    },
-    {
-      "defaultNew": "January English Default New 1"
+      "defaultBoth": "Saint Emilia"
     }
   ],
   "2": [
     {
-      "primaryBoth": "January English Primary 2"
+      "defaultBoth": "Forefeast of the Theophany"
     },
     {
       "primaryBoth": "January English Primary 2"
@@ -38,12 +23,12 @@
   ],
   "3": [
     {
-      "primaryBoth": "January English Primary 3"
+      "defaultBoth": "Forefeast of the Theophany"
     }
   ],
   "4": [
     {
-      "primaryBoth": "January English Primary 4"
+      "defaultBoth": "Forefeast of the Theophany"
     }
   ],
   "5": [

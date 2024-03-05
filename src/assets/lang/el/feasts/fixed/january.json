@@ -1,36 +1,21 @@
 {
   "1": [
     {
-      "primaryBoth": "January Greek Primary 1"
+      "primaryBoth": "Η ΠΕΡΙΤΟΜΗ ΤΟΥ ΚΥΡΙΟΥ ΗΜΩΝ ΙΗΣΟΥ ΧΡΙΣΤΟΥ"
     },
     {
-      "secondaryBoth": "January Greek Secondary 1"
+      "secondaryBoth": "Αγίου Βασιλείου τοῦ Μεγάλου"
     },
     {
-      "defaultBoth": "January Greek Default 1"
+      "defaultBoth": "Αγίου Βασιλείου τοῦ έν Άγκύρα"
     },
     {
-      "primaryOld": "January Greek Primary Old 1"
-    },
-    {
-      "secondaryOld": "January Greek Secondary Old 1"
-    },
-    {
-      "defaultOld": "January Greek Default Old 1"
-    },
-    {
-      "primaryNew": "January Greek Primary New 1"
-    },
-    {
-      "secondaryNew": "January Greek Secondary New 1"
-    },
-    {
-      "defaultNew": "January Greek Default New 1"
+      "defaultBoth": "Αγίας Ἐμμελείας"
     }
   ],
   "2": [
     {
-      "primaryBoth": "January Greek Primary 2"
+      "defaultBoth": "Προεόρτια τῶν Θεοφανείων"
     },
     {
       "primaryBoth": "January Greek Primary 2"
@@ -38,12 +23,12 @@
   ],
   "3": [
     {
-      "primaryBoth": "January Greek Primary 3"
+      "defaultBoth": "Προεόρτια τῶν Θεοφανείων"
     }
   ],
   "4": [
     {
-      "primaryBoth": "January Greek Primary 4"
+      "defaultBoth": "Προεόρτια τῶν Θεοφανείων"
     }
   ],
   "5": [
