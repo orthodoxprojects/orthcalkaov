@@ -37,7 +37,6 @@ const MoonPhase = ({ date, day, selectCalendar }: Props) => {
       <img src="./img/moonWaningCrescent.svg" alt="moonWaningCrescent" />
     ) : null;
 
-  console.log(newDate, phase);
   return <div>{moonPhaseImg}</div>;
 };
 
