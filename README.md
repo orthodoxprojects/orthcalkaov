@@ -9,7 +9,7 @@ OrthCalKAOV is an application that provides support for both the Old Calendar (J
 - **Fixed Feasts**: Displaying Saints and Feasts. _(Under Development)_
 - **Movable Feasts**: Calculating and displaying Feasts. _(Under Development)_
 - **Sunday Information**: Displays Gospel, Epistle, Mode and Eothinon information for Sundays. _(Under Development)_
-- **Paschalion**: Displays Pascha date for selected year. _(Under Development)_
+- **Paschalion**: Displays Pascha date for selected year.
 - **Fasting Icon**: Indicate fasting status for every day. _(Under Development)_
 - **Moon Phase Icon**: Provides the moon phase for every day.
 - **Highlight and Auto-Scrolling**: Highlights and automatically scrolls to the current day.
