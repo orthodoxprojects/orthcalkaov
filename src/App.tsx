@@ -182,7 +182,7 @@ function App() {
           </div>
         </div>
       </div>
-      {date.getFullYear() > 1924 && date.getFullYear() < 2000 ? (
+      {date.getFullYear() > 1924 && date.getFullYear() < 2100 ? (
         <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 p-2">
           {getDaysArrayForMonth(date).map((day) => (
             <div
