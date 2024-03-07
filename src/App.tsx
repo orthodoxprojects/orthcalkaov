@@ -182,112 +182,110 @@ function App() {
           </div>
         </div>
       </div>
-      {date.getFullYear() < 1925 || date.getFullYear() > 2099 ? (
-        <WarningYearsInterval selectLanguage={selectLanguage} />
-      ) : null}
-      <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 p-2">
-        {date.getFullYear() > 1924 && date.getFullYear() < 2100
-          ? getDaysArrayForMonth(date).map((day) => (
+      {date.getFullYear() > 1924 && date.getFullYear() < 2000 ? (
+        <div className="grid gap-2 grid-cols-1 lg:grid-cols-2 p-2">
+          {getDaysArrayForMonth(date).map((day) => (
+            <div
+              ref={
+                selectCalendar === "new" &&
+                getNewDate(day).getFullYear() === currentDate.getFullYear() &&
+                getNewDate(day).getMonth() === currentDate.getMonth() &&
+                getNewDate(day).getDate() === currentDate.getDate()
+                  ? scrollToRef
+                  : selectCalendar === "old" &&
+                    getNewDate(day).getFullYear() ===
+                      decreaseDateByDays(currentDate, 13).getFullYear() &&
+                    getNewDate(day).getMonth() ===
+                      decreaseDateByDays(currentDate, 13).getMonth() &&
+                    getNewDate(day).getDate() ===
+                      decreaseDateByDays(currentDate, 13).getDate()
+                  ? scrollToRef
+                  : null
+              }
+              key={day}
+              className={`${
+                selectCalendar === "new" &&
+                getNewDate(day).getFullYear() === currentDate.getFullYear() &&
+                getNewDate(day).getMonth() === currentDate.getMonth() &&
+                getNewDate(day).getDate() === currentDate.getDate()
+                  ? "bg-stone-700"
+                  : selectCalendar === "old" &&
+                    getNewDate(day).getFullYear() ===
+                      decreaseDateByDays(currentDate, 13).getFullYear() &&
+                    getNewDate(day).getMonth() ===
+                      decreaseDateByDays(currentDate, 13).getMonth() &&
+                    getNewDate(day).getDate() ===
+                      decreaseDateByDays(currentDate, 13).getDate()
+                  ? "bg-stone-700"
+                  : "bg-stone-800"
+              } grid grid-cols-[80px_auto] p-2 m-0 rounded-xl`}
+            >
               <div
-                ref={
-                  selectCalendar === "new" &&
-                  getNewDate(day).getFullYear() === currentDate.getFullYear() &&
-                  getNewDate(day).getMonth() === currentDate.getMonth() &&
-                  getNewDate(day).getDate() === currentDate.getDate()
-                    ? scrollToRef
-                    : selectCalendar === "old" &&
-                      getNewDate(day).getFullYear() ===
-                        decreaseDateByDays(currentDate, 13).getFullYear() &&
-                      getNewDate(day).getMonth() ===
-                        decreaseDateByDays(currentDate, 13).getMonth() &&
-                      getNewDate(day).getDate() ===
-                        decreaseDateByDays(currentDate, 13).getDate()
-                    ? scrollToRef
-                    : null
-                }
-                key={day}
                 className={`${
-                  selectCalendar === "new" &&
-                  getNewDate(day).getFullYear() === currentDate.getFullYear() &&
-                  getNewDate(day).getMonth() === currentDate.getMonth() &&
-                  getNewDate(day).getDate() === currentDate.getDate()
-                    ? "bg-stone-700"
-                    : selectCalendar === "old" &&
-                      getNewDate(day).getFullYear() ===
-                        decreaseDateByDays(currentDate, 13).getFullYear() &&
-                      getNewDate(day).getMonth() ===
-                        decreaseDateByDays(currentDate, 13).getMonth() &&
-                      getNewDate(day).getDate() ===
-                        decreaseDateByDays(currentDate, 13).getDate()
-                    ? "bg-stone-700"
-                    : "bg-stone-800"
-                } grid grid-cols-[80px_auto] p-2 m-0 rounded-xl`}
+                  selectCalendar === "new" && getNewDate(day).getDay() === 0
+                    ? "text-red-300"
+                    : selectCalendar === "old" && getNewDate(day).getDay() === 1
+                    ? "text-red-300"
+                    : "text-stone-300"
+                } pr-2 text-center`}
               >
-                <div
-                  className={`${
-                    selectCalendar === "new" && getNewDate(day).getDay() === 0
-                      ? "text-red-300"
-                      : selectCalendar === "old" &&
-                        getNewDate(day).getDay() === 1
-                      ? "text-red-300"
-                      : "text-stone-300"
-                  } pr-2 text-center`}
-                >
-                  <div className="text-sm lg:text-base font-bold">
-                    {selectCalendar === "new"
-                      ? formatDate(getLocale, getNewDate(day), {
-                          showWeekday: true,
-                        })
-                      : formatDate(getLocale, getNewDate(day - 1), {
-                          showWeekday: true,
-                        })}
-                  </div>
-                  <div className="text-sm lg:text-base font-bold">
-                    {day}/{date.getMonth() + 1}
-                  </div>
-                  <div className="text-[12px] lg:text-sm">
-                    {`${
-                      selectCalendar === "new"
-                        ? decreaseDateByDays(getNewDate(day), 13).getDate()
-                        : increaseDateByDays(getNewDate(day), 13).getDate()
-                    }/${
-                      selectCalendar === "new"
-                        ? decreaseDateByDays(getNewDate(day), 13).getMonth() + 1
-                        : increaseDateByDays(getNewDate(day), 13).getMonth() + 1
-                    } `}
-                    <CalAbbr
-                      selectLanguage={selectLanguage}
-                      selectCalendar={selectCalendar}
-                    />
-                  </div>
-                  <div className="flex justify-between">
-                    <Fasting />
-                    <MoonPhase
-                      date={date}
-                      day={day}
-                      selectCalendar={selectCalendar}
-                    />
-                  </div>
+                <div className="text-sm lg:text-base font-bold">
+                  {selectCalendar === "new"
+                    ? formatDate(getLocale, getNewDate(day), {
+                        showWeekday: true,
+                      })
+                    : formatDate(getLocale, getNewDate(day - 1), {
+                        showWeekday: true,
+                      })}
                 </div>
-                <div className="pl-2 border-l-[1px] border-stone-300">
-                  <FeastsMovable />
-                  <FeastsFixed
+                <div className="text-sm lg:text-base font-bold">
+                  {day}/{date.getMonth() + 1}
+                </div>
+                <div className="text-[12px] lg:text-sm">
+                  {`${
+                    selectCalendar === "new"
+                      ? decreaseDateByDays(getNewDate(day), 13).getDate()
+                      : increaseDateByDays(getNewDate(day), 13).getDate()
+                  }/${
+                    selectCalendar === "new"
+                      ? decreaseDateByDays(getNewDate(day), 13).getMonth() + 1
+                      : increaseDateByDays(getNewDate(day), 13).getMonth() + 1
+                  } `}
+                  <CalAbbr
                     selectLanguage={selectLanguage}
-                    getMonthIndex={date.getMonth()}
-                    getDayIndex={day.toString()}
                     selectCalendar={selectCalendar}
                   />
-                  <Sunday
-                    selectLanguage={selectLanguage}
-                    selectCalendar={selectCalendar}
+                </div>
+                <div className="flex justify-between">
+                  <Fasting />
+                  <MoonPhase
                     date={date}
                     day={day}
+                    selectCalendar={selectCalendar}
                   />
                 </div>
               </div>
-            ))
-          : null}
-      </div>
+              <div className="pl-2 border-l-[1px] border-stone-300">
+                <FeastsMovable />
+                <FeastsFixed
+                  selectLanguage={selectLanguage}
+                  getMonthIndex={date.getMonth()}
+                  getDayIndex={day.toString()}
+                  selectCalendar={selectCalendar}
+                />
+                <Sunday
+                  selectLanguage={selectLanguage}
+                  selectCalendar={selectCalendar}
+                  date={date}
+                  day={day}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <WarningYearsInterval selectLanguage={selectLanguage} />
+      )}
     </div>
   );
 }
