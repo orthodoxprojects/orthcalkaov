@@ -218,7 +218,7 @@ function App() {
                       decreaseDateByDays(currentDate, 13).getDate()
                   ? "bg-stone-700"
                   : "bg-stone-800"
-              } grid grid-cols-[80px_auto] p-2 m-0 rounded-xl`}
+              } p-2 m-0 rounded-xl`}
             >
               <div
                 className={`${
@@ -227,34 +227,36 @@ function App() {
                     : selectCalendar === "old" && getNewDate(day).getDay() === 1
                     ? "text-red-300"
                     : "text-stone-300"
-                } pr-2 text-center`}
+                } flex justify-between pb-0 text-center`}
               >
-                <div className="text-sm lg:text-base font-bold">
-                  {selectCalendar === "new"
-                    ? formatDate(getLocale, getNewDate(day), {
-                        showWeekday: true,
-                      })
-                    : formatDate(getLocale, getNewDate(day - 1), {
-                        showWeekday: true,
-                      })}
-                </div>
-                <div className="text-sm lg:text-base font-bold">
-                  {day}/{date.getMonth() + 1}
-                </div>
-                <div className="text-[12px] lg:text-sm">
-                  {`${
-                    selectCalendar === "new"
-                      ? decreaseDateByDays(getNewDate(day), 13).getDate()
-                      : increaseDateByDays(getNewDate(day), 13).getDate()
-                  }/${
-                    selectCalendar === "new"
-                      ? decreaseDateByDays(getNewDate(day), 13).getMonth() + 1
-                      : increaseDateByDays(getNewDate(day), 13).getMonth() + 1
-                  } `}
-                  <CalAbbr
-                    selectLanguage={selectLanguage}
-                    selectCalendar={selectCalendar}
-                  />
+                <div className="text-base lg:text-2xl">
+                  <span className="font-bold">
+                    {selectCalendar === "new"
+                      ? formatDate(getLocale, getNewDate(day), {
+                          showWeekday: true,
+                        })
+                      : formatDate(getLocale, getNewDate(day - 1), {
+                          showWeekday: true,
+                        })}{" "}
+                  </span>
+                  <span className="font-bold">
+                    {day}/{date.getMonth() + 1}{" "}
+                  </span>
+                  <span>
+                    {`${
+                      selectCalendar === "new"
+                        ? decreaseDateByDays(getNewDate(day), 13).getDate()
+                        : increaseDateByDays(getNewDate(day), 13).getDate()
+                    }/${
+                      selectCalendar === "new"
+                        ? decreaseDateByDays(getNewDate(day), 13).getMonth() + 1
+                        : increaseDateByDays(getNewDate(day), 13).getMonth() + 1
+                    } `}
+                    <CalAbbr
+                      selectLanguage={selectLanguage}
+                      selectCalendar={selectCalendar}
+                    />
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <Fasting />
@@ -265,7 +267,7 @@ function App() {
                   />
                 </div>
               </div>
-              <div className="pl-2 border-l-[1px] border-stone-300">
+              <div className="pt-2 border-t-[1px] border-stone-300">
                 <FeastsMovable />
                 <FeastsFixed
                   selectLanguage={selectLanguage}
