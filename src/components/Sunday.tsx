@@ -41,40 +41,32 @@ const Sunday = ({ selectLanguage, selectCalendar, date, day }: Props) => {
         new Date(date.getFullYear(), date.getMonth(), day).getDay() === 0) ||
       (selectCalendar === "old" &&
         new Date(date.getFullYear(), date.getMonth(), day).getDay() === 1) ? (
-        <>
-          <p>
-            <span className="text-stone-200 text-sm lg:text-base font-bold">
-              {getSunday0}:{" "}
-            </span>
-            <span className="text-stone-300 text-sm lg:text-base">
-              TO IMPLEMENT
-            </span>
-          </p>
-          <p>
-            <span className="text-stone-200 text-sm lg:text-base font-bold">
-              {getSunday1}:{" "}
-            </span>
-            <span className="text-stone-300 text-sm lg:text-base">
-              TO IMPLEMENT
-            </span>
-          </p>
-          <p>
-            <span className="text-stone-200 text-sm lg:text-base font-bold">
-              {getSunday2}:{" "}
-            </span>
-            <span className="text-stone-300 text-sm lg:text-base">
-              TO IMPLEMENT
-            </span>
-          </p>
-          <p>
-            <span className="text-stone-200 text-sm lg:text-base font-bold">
-              {getSunday3}:{" "}
-            </span>
-            <span className="text-stone-300 text-sm lg:text-base">
-              TO IMPLEMENT
-            </span>
-          </p>
-        </>
+        <div className="mt-2 pt-2 border-t-[1px] border-stone-300">
+          <span className="text-stone-200 text-sm lg:text-xl font-bold">
+            {getSunday0}:{" "}
+          </span>
+          <span className="text-stone-300 text-sm lg:text-xl">
+            TO IMPLEMENT{" "}
+          </span>
+          <span className="text-stone-200 text-sm lg:text-xl font-bold">
+            {getSunday1}:{" "}
+          </span>
+          <span className="text-stone-300 text-sm lg:text-xl">
+            TO IMPLEMENT{" "}
+          </span>
+          <span className="text-stone-200 text-sm lg:text-xl font-bold">
+            {getSunday2}:{" "}
+          </span>
+          <span className="text-stone-300 text-sm lg:text-xl">
+            TO IMPLEMENT{" "}
+          </span>
+          <span className="text-stone-200 text-sm lg:text-xl font-bold">
+            {getSunday3}:{" "}
+          </span>
+          <span className="text-stone-300 text-sm lg:text-xl">
+            TO IMPLEMENT{" "}
+          </span>
+        </div>
       ) : null}
     </>
   );

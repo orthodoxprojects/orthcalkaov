@@ -1,12 +1,12 @@
 const Fasting = () => {
   return (
-    <div>
+    <>
       <img
         src="./img/totalFast.svg"
         alt="totalFast"
         className="w-6 lg:w-8 h-6 lg:h-8"
       />
-      <img
+      {/* <img
         src="./img/xerophagy.svg"
         alt="xerophagy"
         className="w-6 lg:w-8 h-6 lg:h-8"
@@ -30,8 +30,8 @@ const Fasting = () => {
         src="./img/fastFree.svg"
         alt="fastFree"
         className="w-6 lg:w-8 h-6 lg:h-8"
-      />
-    </div>
+      /> */}
+    </>
   );
 };
 

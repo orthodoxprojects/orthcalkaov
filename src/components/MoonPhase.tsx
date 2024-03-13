@@ -69,7 +69,7 @@ const MoonPhase = ({ date, day, selectCalendar }: Props) => {
       />
     ) : null;
 
-  return <div>{moonPhaseImg}</div>;
+  return <>{moonPhaseImg}</>;
 };
 
 export default MoonPhase;

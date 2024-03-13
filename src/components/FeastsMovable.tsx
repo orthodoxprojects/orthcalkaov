@@ -1,8 +1,8 @@
 const FeastsMovable = () => {
   return (
-    <div className="text-red-300 text-sm lg:text-base font-bold">
-      TO IMPLEMENT
-    </div>
+    <span className="text-red-300 text-sm lg:text-xl font-bold">
+      TO IMPLEMENT{" "}
+    </span>
   );
 };
 

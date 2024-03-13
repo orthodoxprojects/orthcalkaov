@@ -15,7 +15,7 @@ const WarningYearsInterval = ({ selectLanguage }: Props) => {
       ? warningEl[0]
       : warningEn[0];
   return (
-    <div className="p-4 text-red-300 text-sm lg:text-base font-bold">
+    <div className="p-4 text-red-300 text-sm lg:text-xl font-bold">
       <p className="pb-4 flex justify-center">
         <img src="./img/warning.svg" alt="warning" />
       </p>

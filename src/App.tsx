@@ -227,7 +227,7 @@ function App() {
                     : selectCalendar === "old" && getNewDate(day).getDay() === 1
                     ? "text-red-300"
                     : "text-stone-300"
-                } flex justify-between pb-0 text-center`}
+                } flex justify-between pb-2 text-center`}
               >
                 <div className="text-base lg:text-2xl">
                   <span className="font-bold">
@@ -259,22 +259,28 @@ function App() {
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <Fasting />
-                  <MoonPhase
-                    date={date}
-                    day={day}
-                    selectCalendar={selectCalendar}
-                  />
+                  <div className="pr-2">
+                    <Fasting />
+                  </div>
+                  <div>
+                    <MoonPhase
+                      date={date}
+                      day={day}
+                      selectCalendar={selectCalendar}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="pt-2 border-t-[1px] border-stone-300">
-                <FeastsMovable />
-                <FeastsFixed
-                  selectLanguage={selectLanguage}
-                  getMonthIndex={date.getMonth()}
-                  getDayIndex={day.toString()}
-                  selectCalendar={selectCalendar}
-                />
+                <div>
+                  <FeastsMovable />
+                  <FeastsFixed
+                    selectLanguage={selectLanguage}
+                    getMonthIndex={date.getMonth()}
+                    getDayIndex={day.toString()}
+                    selectCalendar={selectCalendar}
+                  />
+                </div>
                 <Sunday
                   selectLanguage={selectLanguage}
                   selectCalendar={selectCalendar}
