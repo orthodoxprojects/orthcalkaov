@@ -42,25 +42,25 @@ const Sunday = ({ selectLanguage, selectCalendar, date, day }: Props) => {
       (selectCalendar === "old" &&
         new Date(date.getFullYear(), date.getMonth(), day).getDay() === 1) ? (
         <div className="mt-2 pt-2 border-t-2 border-red-800">
-          <span className="text-red-400 text-sm lg:text-xl font-bold">
+          <span className="text-red-500 text-sm lg:text-xl font-bold">
             {getSunday0}:{" "}
           </span>
           <span className="text-neutral-300 text-sm lg:text-xl">
             TO IMPLEMENT{", "}
           </span>
-          <span className="text-red-400 text-sm lg:text-xl font-bold">
+          <span className="text-red-500 text-sm lg:text-xl font-bold">
             {getSunday1}:{" "}
           </span>
           <span className="text-neutral-300 text-sm lg:text-xl">
             TO IMPLEMENT{", "}
           </span>
-          <span className="text-red-400 text-sm lg:text-xl font-bold">
+          <span className="text-red-500 text-sm lg:text-xl font-bold">
             {getSunday2}:{" "}
           </span>
           <span className="text-neutral-300 text-sm lg:text-xl">
             TO IMPLEMENT{", "}
           </span>
-          <span className="text-red-400 text-sm lg:text-xl font-bold">
+          <span className="text-red-500 text-sm lg:text-xl font-bold">
             {getSunday3}:{" "}
           </span>
           <span className="text-neutral-300 text-sm lg:text-xl">

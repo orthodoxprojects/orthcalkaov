@@ -103,7 +103,7 @@ const FeastsFixed = ({
     <>
       {setDayIndex.map((month: any, key: number) => (
         <span key={key}>
-          <span className="text-red-400 text-sm lg:text-xl font-bold">
+          <span className="text-red-500 text-sm lg:text-xl font-bold">
             {month["primaryBoth"]}{" "}
           </span>
           <span className="text-neutral-200 text-sm lg:text-xl font-bold">
@@ -112,7 +112,7 @@ const FeastsFixed = ({
           <span className="text-neutral-300 text-sm lg:text-xl">
             {month["defaultBoth"]}{" "}
           </span>
-          <span className="text-red-400 text-sm lg:text-xl font-bold">
+          <span className="text-red-500 text-sm lg:text-xl font-bold">
             {selectCalendar === "old" && month["primaryOld"]}{" "}
           </span>
           <span className="text-neutral-200 text-sm lg:text-xl font-bold">
@@ -121,7 +121,7 @@ const FeastsFixed = ({
           <span className="text-neutral-300 text-sm lg:text-xl">
             {selectCalendar === "old" && month["defaultOld"]}{" "}
           </span>
-          <span className="text-red-400 text-sm lg:text-xl font-bold">
+          <span className="text-red-500 text-sm lg:text-xl font-bold">
             {selectCalendar === "new" && month["primaryNew"]}{" "}
           </span>
           <span className="text-neutral-200 text-sm lg:text-xl font-bold">

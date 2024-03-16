@@ -47,7 +47,7 @@ const Paschalion = ({
         <img src="./img/egg.svg" alt="egg" />
       </button>
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box bg-neutral-800 text-neutral-200">
+        <div className="modal-box bg-neutral-700 text-neutral-200">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
