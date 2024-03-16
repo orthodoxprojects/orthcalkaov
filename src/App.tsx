@@ -136,8 +136,8 @@ function App() {
     }
   }, [dateNewCalendar, dateOldCalendar]);
   return (
-    <div className="min-h-dvh bg-stone-950">
-      <div className="sticky top-0 w-full bg-[#a89894] text-stone-950">
+    <div className="min-h-dvh bg-neutral-950">
+      <div className="sticky top-0 w-full bg-red-800 text-orange-300 border-b-2 border-orange-300">
         <div className="navbar">
           <div className="navbar-start">
             <Drawer
@@ -208,7 +208,7 @@ function App() {
                 getNewDate(day).getFullYear() === currentDate.getFullYear() &&
                 getNewDate(day).getMonth() === currentDate.getMonth() &&
                 getNewDate(day).getDate() === currentDate.getDate()
-                  ? "bg-stone-700"
+                  ? "border-l-red-400"
                   : selectCalendar === "old" &&
                     getNewDate(day).getFullYear() ===
                       decreaseDateByDays(currentDate, 13).getFullYear() &&
@@ -216,18 +216,18 @@ function App() {
                       decreaseDateByDays(currentDate, 13).getMonth() &&
                     getNewDate(day).getDate() ===
                       decreaseDateByDays(currentDate, 13).getDate()
-                  ? "bg-stone-700"
-                  : "bg-stone-800"
-              } p-2 m-0 rounded-xl`}
+                  ? "border-l-red-400"
+                  : "border-l-red-800"
+              } p-2 m-0 rounded-lg border-l-8 bg-neutral-800`}
             >
               <div
                 className={`${
                   selectCalendar === "new" && getNewDate(day).getDay() === 0
-                    ? "text-red-300"
+                    ? "text-red-400"
                     : selectCalendar === "old" && getNewDate(day).getDay() === 1
-                    ? "text-red-300"
-                    : "text-stone-300"
-                } flex justify-between pb-2 text-center`}
+                    ? "text-red-400"
+                    : "text-orange-300"
+                } flex justify-between pb-2 text-center border-b-2 border-orange-300`}
               >
                 <div className="text-base lg:text-2xl">
                   <span className="font-bold">
@@ -239,9 +239,9 @@ function App() {
                           showWeekday: true,
                         })}{" "}
                   </span>
-                  <span className="font-bold">
-                    {day}/{date.getMonth() + 1}{" "}
-                  </span>
+                  <span className="font-bold">{day}</span>
+                </div>
+                <div className="text-base lg:text-2xl text-orange-300">
                   <span>
                     {`${
                       selectCalendar === "new"
@@ -271,7 +271,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="pt-2 border-t-[1px] border-stone-300">
+              <div className="pt-2">
                 <div>
                   <FeastsMovable />
                   <FeastsFixed

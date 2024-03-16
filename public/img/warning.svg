@@ -43,5 +43,5 @@
   <path
      d="M 0,1320 1320,-960 2640,1320 Z M 414,1080 H 2226 L 1320,-480 Z m 906,-120 q 51,0 85.5,-34.5 Q 1440,891 1440,840 1440,789 1405.5,754.5 1371,720 1320,720 q -51,0 -85.5,34.5 -34.5,34.5 -34.5,85.5 0,51 34.5,85.5 Q 1269,960 1320,960 Z M 1200,600 h 240 V -2e-6 h -240 z m 120,-300 z"
      id="path1"
-     style="fill:#fca5a5;fill-opacity:1;stroke:none;stroke-width:3" />
+     style="fill:#f87171;fill-opacity:1;stroke:none;stroke-width:3" />
 </svg>

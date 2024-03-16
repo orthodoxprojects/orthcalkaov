@@ -108,11 +108,11 @@ const Drawer = ({
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className="menu p-4 w-80 min-h-full bg-[#a89894] text-stone-950">
+          <div className="menu p-4 w-80 min-h-full bg-neutral-800 text-neutral-200">
             {/* Sidebar content here */}
             <p className="p-4 font-bold">{getLanguage0}</p>
             <select
-              className="select select-bordered w-full max-w-xs bg-stone-400 text-stone-950"
+              className="select select-bordered w-full max-w-xs bg-neutral-950 text-neutral-300"
               id="selectLanguage"
               defaultValue={defaultLanguageValue}
               onChange={onSelectLanguage}
@@ -123,7 +123,7 @@ const Drawer = ({
             </select>
             <p className="p-4 font-bold">{getCalendar0}</p>
             <select
-              className="select select-bordered w-full max-w-xs bg-stone-400 text-stone-950"
+              className="select select-bordered w-full max-w-xs bg-neutral-950 text-neutral-300"
               id="selectCalendar"
               defaultValue={defaultCalendarValue}
               onChange={onSelectCalendar}
@@ -133,7 +133,7 @@ const Drawer = ({
             </select>
             <p className="p-4 font-bold">{getFasting0}</p>
             <select
-              className="select select-bordered w-full max-w-xs bg-stone-400 text-stone-950"
+              className="select select-bordered w-full max-w-xs bg-neutral-950 text-neutral-300"
               id="selectFasting"
               defaultValue={defaultFastingValue}
               onChange={onSelectFasting}
