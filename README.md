@@ -21,7 +21,7 @@ To get started with **orthcalkaov**, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/efraimkaov/orthcalkaov.git
+   git clone https://github.com/kolitsoy/orthcalkaov.git
    ```
 
 2. **Install dependencies:**
@@ -41,7 +41,7 @@ To get started with **orthcalkaov**, follow these steps:
 
 ## Web Version
 
-Access the web version of the application [here](https://efraimkaov.github.io/orthcalkaov/).
+Access the web version of the application [here](https://kolitsoy.github.io/orthcalkaov/).
 
 ## Translating to Another Language
 
@@ -68,4 +68,4 @@ This application is licensed under the GNU General Public License v3.0 - see the
 
 ## Reporting Issues
 
-If you encounter any issues or have suggestions for improvements, please [create an issue](https://github.com/efraimkaov/orthcalkaov/issues) on our issue tracker. We appreciate your feedback!
+If you encounter any issues or have suggestions for improvements, please [create an issue](https://github.com/kolitsoy/orthcalkaov/issues) on our issue tracker. We appreciate your feedback!
