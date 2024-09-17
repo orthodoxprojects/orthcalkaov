@@ -1,5 +1,9 @@
 # Orthodox Calendar KAOV
 
+## !!! ATTENTION !!!
+
+This project will be moved to the [ocma](https://github.com/orthodoxprojects/ocma) repository and will be rewritten from scratch. Also, all the logic will be moved to the [ocma-data](https://github.com/orthodoxprojects/ocma-data) repository, a static API that can be used online or completely offline.
+
 ## Overview
 
 OrthCalKAOV is an application that provides support for both the Old Calendar (Julian Calendar) and the New Calendar (Revised Julian Calendar) for the years 1925 to 2099. This application is built using Vite, TypeScript, and React, aiming to offer a modern and efficient solution for working with Orthodox calendar dates.
